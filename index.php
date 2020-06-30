@@ -6,6 +6,11 @@ if (file_exists('source.xml')) {
     exit('Echec lors de l\'ouverture du fichier test.xml.');
 } 
 var_dump($xml);
+
+foreach ($xml as $section) {
+    echo $section->content;
+}
+
 ?>
 
 <!DOCTYPE html>
