@@ -1,16 +1,20 @@
 <?php
+// On vérifie si le fichier source.xml
 if (file_exists('source.xml')) {
     $sourceXml = simplexml_load_file('source.xml');
-    echo ($sourceXml);
 } else {
     exit('Echec lors de l\'ouverture du fichier test.xml.');
 }
-var_dump($sourceXml);
-
-// echo $sourceXml->page[1] ->content;
-foreach ($sourceXml->page as $page) {
-    echo '<a href="index.php?id=' . (intval($page[('id')]) - 1) . '">accueil</a>';
+// On récupère la valeur de l'attribut $page sinon on lui donne une valeur de 0
+if (isset($_GET['page'])) {
+    $page = intval($_GET['page']) - 1;
+} else {
+    $page = 0;
 }
+
+// foreach ($sourceXml->page as $page) {
+//     echo '<a href="index.php?id=' . (intval($page[('id')]) - 1) . '">accueil</a>';
+// }
 ?>
 
 <!DOCTYPE html>
@@ -23,10 +27,13 @@ foreach ($sourceXml->page as $page) {
 </head>
 
 <body>
-    <nav>
-        <a href="index.php?">Accueil</a>
-    </nav>
-    <?php echo $sourceXml->page[intval($_GET['id'])]->content; ?>
+    <a href="index.php?page=1">page1</a><br>
+    <a href="index.php?page=2">page2</a><br>
+    <a href="index.php?page=3">page3</a><br>
+    <a href="index.php?page=4">page4</a><br>
+    <h1><?= $sourceXml->page[$page]->title; ?></h1>
+    <h3><?= $sourceXml->page[$page]->title; ?></h3>
+    <?= $sourceXml->page[$page]->content; ?>
 </body>
 
 </html>
