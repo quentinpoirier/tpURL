@@ -1,4 +1,5 @@
 <?php
+
 // On vérifie si le fichier source.xml
 if (file_exists('source.xml')) {
     $sourceXml = simplexml_load_file('source.xml');
@@ -11,7 +12,6 @@ if (isset($_GET['page'])) {
 } else {
     $page = 0;
 }
-
 // foreach ($sourceXml->page as $page) {
 //     echo '<a href="index.php?id=' . (intval($page[('id')]) - 1) . '">accueil</a>';
 // }
@@ -27,13 +27,12 @@ if (isset($_GET['page'])) {
 </head>
 
 <body>
-    <a href="index.php?page=1">page1</a><br>
-    <a href="index.php?page=2">page2</a><br>
-    <a href="index.php?page=3">page3</a><br>
-    <a href="index.php?page=4">page4</a><br>
+    <a href="page1.html">Accueil</a><br>
+    <a href="page2.html">Informations</a><br>
+    <a href="page3.html">Avis clients</a><br>
+    <a href="page4.html">Contact</a><br>
     <h1><?= $sourceXml->page[$page]->title; ?></h1>
-    <h3><?= $sourceXml->page[$page]->title; ?></h3>
-    <?= $sourceXml->page[$page]->content; ?>
+    <p><?= $sourceXml->page[$page]->content; ?></p>
 </body>
 
 </html>
