@@ -20,7 +20,7 @@
     <div class="bgBlack">
         <div class="row justify-content-center">
             <div class="col-sm-6 mt-3 mb-3">
-                <div class="h2 text-center textColorRed text-uppercase">Tu t'égare camarade !</div>
+                <div class="h2 text-center textColorRed text-uppercase">Tu t'égares camarade !</div>
                 <div class="text-center"><img class="w-100" src="assets\img\iseeyou.gif"></div>
                 <div class="h5 text-center textColorRed">Vous avez tenté d’accéder à une page qui ne se trouve pas sur ce site. Veuillez revenir sur la page d'accueil afin de continuer votre navigation sur notre site.</div>
                 <div class='text-center'><a class="h3 textColorRed text-uppercase" href="page1.html">retourne dans le droit chemin</a></div>
